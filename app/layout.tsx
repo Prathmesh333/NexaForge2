@@ -7,9 +7,10 @@ const display = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-displ
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://prathmesh333.github.io/NexaForge2/"),
-  title: "NexaForge Labs | From idea to working product",
-  description: "NexaForge Labs turns ambitious ideas into AI products, web applications and intelligent workflows.",
-  openGraph: { title: "NexaForge Labs | You imagine it. We build it.", description: "An AI-native product studio for ambitious founders and teams.", type: "website" },
+  title: "AIRA — AI & Software Product Studio",
+  description: "AIRA builds AI products, web applications, automation, MVPs and custom software from idea to launch.",
+  icons: { icon: "/NexaForge2/assets/aira-favicon.svg" },
+  openGraph: { title: "AIRA — Built for the AI era", description: "AI products, software, automation and digital experiences built from idea to launch.", type: "website", images: [{ url: "/NexaForge2/assets/aira-social.png", width: 1200, height: 630, alt: "AIRA — Built for the AI era" }] },
   robots: { index: true, follow: true },
 };
 

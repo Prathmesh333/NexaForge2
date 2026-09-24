@@ -1,4 +1,4 @@
-# NexaForge Labs V2
+# AIRA — AI & Software Studio
 
 An editorial product studio website built with Next.js, Motion and Phosphor Icons.
 
