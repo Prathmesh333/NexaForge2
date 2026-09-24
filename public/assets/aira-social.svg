@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <defs><radialGradient id="g" cx="80%" cy="15%" r="80%"><stop offset="0" stop-color="#293eb4"/><stop offset=".45" stop-color="#0b1c49"/><stop offset="1" stop-color="#020b1a"/></radialGradient><linearGradient id="l"><stop stop-color="#72bdff"/><stop offset="1" stop-color="#5366ff"/></linearGradient></defs>
-  <rect width="1200" height="630" fill="url(#g)"/><g opacity=".6" fill="none" stroke="#6dafff"><ellipse cx="930" cy="250" rx="420" ry="150" transform="rotate(-18 930 250)"/><ellipse cx="930" cy="250" rx="520" ry="210" transform="rotate(23 930 250)"/></g>
-  <g transform="translate(80 70)"><path d="M0 92 42 0h21l40 92H77l-8-20H36L27 92H0Zm49-44h15L56 26l-7 22Z" fill="url(#l)"/><path d="M0 5h24v87H0z" fill="url(#l)"/><circle cx="88" cy="10" r="8" fill="#9cafff"/></g>
-  <text x="80" y="300" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="800" letter-spacing="-10" fill="#f7f9ff">AIRA</text><text x="84" y="390" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="600" fill="#9cafff">Built for the AI era.</text><text x="84" y="485" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#b9c6e5">AI products · software · automation · digital experiences</text>
-</svg>

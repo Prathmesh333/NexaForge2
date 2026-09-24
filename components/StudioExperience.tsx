@@ -71,11 +71,14 @@ const projects = [
   { no: "03", name: "Distributed AI research", type: "Experimental engineering", copy: "Hands-on work across distributed machine learning, retrieval systems and AI infrastructure, translating research into working technical systems.", href: "https://github.com/Prathmesh333/ray", className: "project-research", proof: "View the research work" },
 ];
 
-function Mark() {
-  return <svg className="aira-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M7 35 20 7h6l12 28h-8l-2.7-6.5H17.8L15 35H7Zm13.5-13h4.2L22.6 16l-2.1 6Z" fill="currentColor"/><path d="M6 8h8v27H6z" fill="var(--blue)"/><circle cx="35" cy="9" r="3" fill="var(--blue)"/></svg>;
+function Mark({ theme }: { theme: "light" | "dark" }) {
+  return <img className="aira-mark" src={img("aira-symbol-blue.png")} alt="" aria-hidden="true" />;
 }
 
-function Brand() { return <span className="aira-wordmark"><span>AI</span>RA</span>; }
+function BrandLogo({ theme, tagline = false }: { theme: "light" | "dark"; tagline?: boolean }) {
+  const name = tagline ? `aira-tagline-${theme}.png` : `aira-logo-${theme}.png`;
+  return <img className={tagline ? "aira-tagline" : "aira-logo"} src={img(name)} alt={tagline ? "AIRA — Built for the AI era" : "AIRA"} />;
+}
 
 function Reveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const reduce = useReducedMotion();
@@ -110,7 +113,7 @@ export default function StudioExperience() {
 
   return <main data-theme={theme}>
     <header className="nav-shell">
-      <a className="brand" href="#top" aria-label="AIRA home"><Mark /><Brand /></a>
+      <a className="brand" href="#top" aria-label="AIRA home"><BrandLogo theme={theme} /></a>
       <nav className={menu ? "nav-links open" : "nav-links"} aria-label="Main navigation">
         <a href="#services" onClick={() => setMenu(false)}>What we build</a><a href="#work" onClick={() => setMenu(false)}>Real work</a><a href="#capabilities" onClick={() => setMenu(false)}>Possibilities</a><a href="#process" onClick={() => setMenu(false)}>Process</a><a href="#about" onClick={() => setMenu(false)}>About</a>
       </nav>
@@ -137,7 +140,7 @@ export default function StudioExperience() {
           <div className="idea-input"><input id="idea" value={idea} onChange={(e) => setIdea(e.target.value)} /><button aria-label="Build architecture"><ArrowRight weight="bold" /></button></div>
         </form>
         <div className="architecture" key={activeIdea}>
-          <div className="product-core"><Mark /><small>Your product</small></div>
+          <div className="product-core"><Mark theme={theme} /><small>Your product</small></div>
           {architectures.map((item, index) => {
             const Icon = item.icon;
             return <motion.div className={`architecture-node node-${index + 1}`} key={item.label} initial={reduce ? false : { opacity: 0, scale: .8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .08 * ((index + seed) % 6), type: "spring", stiffness: 160 }}><Icon weight="duotone" /><span><b>{item.label}</b><small>{item.detail}</small></span></motion.div>;
@@ -209,7 +212,7 @@ export default function StudioExperience() {
       </div>
     </section>
 
-    <footer><a className="brand footer-brand" href="#top"><Mark /><span><Brand /><small>AI &amp; Software Studio</small></span></a><p>Built for the AI era.</p><div><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a></div></footer>
+    <footer><a className="brand footer-brand" href="#top"><BrandLogo theme={theme} tagline /></a><p>AI &amp; Software Studio</p><div><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a></div></footer>
   </main>;
 }
 
