@@ -112,6 +112,7 @@ export default function StudioExperience() {
     const saved = window.localStorage.getItem("aira-theme");
     const next = saved === "dark" || saved === "light" ? saved : window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     setTheme(next);
+    setSubmitted(new URLSearchParams(window.location.search).get("submitted") === "true");
   }, []);
 
   function toggleTheme() {
@@ -224,7 +225,12 @@ export default function StudioExperience() {
       <img src={img(theme === "dark" ? "dark-panorama.png" : "alpine-panorama.png")} alt="A wide alpine range above the clouds" />
       <div className="contact-inner">
         <Reveal><p className="kicker">Tell us your idea</p><h2>Your idea is probably more buildable than you think.</h2><p>Bring us the rough version. We will help figure out the rest.</p><div className="direct-contact"><a href="mailto:workwithairastudio@gmail.com"><span>Email</span><strong>workwithairastudio@gmail.com</strong></a><a href="tel:+918978279915"><span>Phone</span><strong>+91 89782 79915</strong></a></div></Reveal>
-        {submitted ? <div className="success"><CheckCircle weight="duotone" /><h3>Idea received.</h3><p>We will be in touch soon.</p></div> : <form className="contact-form" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
+        {submitted ? <div className="success"><CheckCircle weight="duotone" /><h3>Idea received.</h3><p>Your message was sent to AIRA. We will be in touch soon.</p></div> : <form className="contact-form" action="https://formsubmit.co/workwithairastudio@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New project enquiry from the AIRA website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://prathmesh333.github.io/NexaForge2/?submitted=true#contact" />
+          <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="form-honeypot" aria-hidden="true" />
           <label><span>01&nbsp;&nbsp;Describe the idea</span><textarea required name="message" rows={3} placeholder="The rough version is enough." /></label>
           <fieldset><legend>02&nbsp;&nbsp;Where are you now?</legend><div className="choice-row"><label><input type="radio" name="stage" value="idea" defaultChecked /><span>Just an idea</span></label><label><input type="radio" name="stage" value="planning" /><span>Planning</span></label><label><input type="radio" name="stage" value="prototype" /><span>Prototype exists</span></label><label><input type="radio" name="stage" value="live" /><span>Product is live</span></label></div></fieldset>
           <fieldset><legend>03&nbsp;&nbsp;What help do you need?</legend><div className="choice-row"><label><input type="radio" name="help" value="everything" defaultChecked /><span>Build everything</span></label><label><input type="radio" name="help" value="ai" /><span>AI integration</span></label><label><input type="radio" name="help" value="automation" /><span>Automation</span></label><label><input type="radio" name="help" value="unsure" /><span>Not sure</span></label></div></fieldset>

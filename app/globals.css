@@ -24,6 +24,7 @@ main[data-theme="dark"] .outcomes,main[data-theme="dark"] .ecosystem,main[data-t
 @media(max-width:650px){.delivery-index{padding:90px 22px}.delivery-columns{grid-template-columns:1fr}.delivery-column{border-right:0!important;border-bottom:1px solid var(--line)}.delivery-column:last-child{border-bottom:0}.solution-types{display:grid;grid-template-columns:1fr 1fr}}
 /* Direct contact details */
 .direct-contact{display:grid;gap:14px;margin-top:34px}.direct-contact a{display:grid;gap:4px;width:max-content;max-width:100%}.direct-contact span{font-size:9px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:var(--muted)}.direct-contact strong{font-size:15px;overflow-wrap:anywhere}.direct-contact a:hover strong{color:var(--blue)}
+.form-honeypot{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
 
 /* AIRA identity */
 .aira-mark{width:32px;height:32px;flex:0 0 auto;color:var(--ink);overflow:visible}.aira-wordmark{font-size:18px;font-weight:850;letter-spacing:.08em}.aira-wordmark>span{color:var(--blue)}.hero-subline{max-width:510px;margin:-18px 0 30px;font-size:13px;font-weight:750;line-height:1.6;color:var(--ink)}.product-core .aira-mark{margin:auto;width:35px;height:35px}.footer-brand>span{display:grid;gap:3px}.footer-brand small{font-size:8px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
