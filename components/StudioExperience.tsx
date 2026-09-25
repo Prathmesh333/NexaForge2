@@ -33,6 +33,18 @@ const services = [
   ["04", "Experimental engineering", "Test ambitious ideas through research prototypes, extensions, distributed systems and unusual technical experiments."],
 ];
 
+const deliveryCapabilities = [
+  { icon: Code, title: "Custom software development", items: ["Web applications", "Enterprise systems", "SaaS platforms", "Business management tools"] },
+  { icon: Cloud, title: "Cloud solutions", items: ["Cloud migration", "Cloud hosting", "DevOps & CI/CD", "Cloud security"] },
+  { icon: Wrench, title: "IT consulting & support", items: ["System integration", "IT infrastructure", "Technical support", "Digital transformation"] },
+  { icon: DeviceMobile, title: "Web & mobile products", items: ["Custom web design", "Android & iOS apps", "UI/UX design", "Ongoing maintenance"] },
+];
+
+const solutionTypes = [
+  [Storefront, "E-commerce"], [ChartLineUp, "Business dashboards"], [Heartbeat, "Healthcare systems"],
+  [GraduationCap, "Learning platforms"], [UsersThree, "HR & team tools"], [DeviceMobile, "Mobile applications"],
+];
+
 const outcomes = [
   ["Company knowledge is scattered across documents.", "AI knowledge assistant"],
   ["Customers wait too long for routine answers.", "Customer support AI"],
@@ -49,13 +61,15 @@ const strengths = [
   [UsersThree, "Agile development process", "Flexible, transparent and collaborative."],
   [Database, "Cost-effective development", "Maximize value and minimize time to market."],
   [Browser, "Cross-platform compatibility", "Web, mobile and cloud, all in sync."],
+  [Cloud, "API & third-party integration", "Connect payments, data, cloud services and the tools you already use."],
+  [CalendarBlank, "Clear, dependable delivery", "Visible milestones, practical timelines and direct communication."],
   [Robot, "Support & maintenance", "We are here when you need us."],
   [ChartLineUp, "Strategic technology partner", "More than a vendor, a long-term partner."],
 ];
 
 const industries = [
-  [Storefront, "Startups"], [UsersThree, "Small businesses"], [Flask, "Research teams"],
-  [Browser, "Creators"], [Buildings, "Agencies"], [Lightning, "Internal teams"], [Robot, "Founders"],
+  [Storefront, "Retail & e-commerce"], [Heartbeat, "Healthcare"], [GraduationCap, "Education"],
+  [Factory, "Manufacturing"], [Buildings, "Real estate"], [Cloud, "Logistics & banking"], [Robot, "Startups & AI teams"],
 ];
 
 const technologies = [
@@ -156,6 +170,14 @@ export default function StudioExperience() {
       <Reveal className="section-intro"><p className="kicker">What we build</p><h2>Four capabilities.<br />One connected studio.</h2></Reveal>
       <div className="service-art"><img src={img(theme === "dark" ? "dark-orbit.png" : "alpine-orbit.png")} alt="Alpine peak framed by fine orbital lines" /></div>
       <div className="service-list">{services.map(([no, title, copy]) => <Reveal className="service-row" key={no}><span>{no}</span><h3>{title}</h3><p>{copy}</p><ArrowDownRight /></Reveal>)}</div>
+    </section>
+
+    <section className="delivery-index" aria-labelledby="delivery-title">
+      <Reveal className="delivery-heading"><p className="kicker">Services in detail</p><h2 id="delivery-title">From the first interface to the systems behind it.</h2></Reveal>
+      <div className="delivery-columns">{deliveryCapabilities.map(({ icon: Icon, title, items }, index) => <Reveal className="delivery-column" key={title}>
+        <span>0{index + 1}</span><Icon weight="duotone" /><h3>{title}</h3><ul>{items.map((item) => <li key={item}><CheckCircle weight="fill" />{item}</li>)}</ul>
+      </Reveal>)}</div>
+      <div className="solution-types" aria-label="Example product types">{solutionTypes.map(([Icon, label]) => <span key={String(label)}><Icon weight="duotone" />{String(label)}</span>)}</div>
     </section>
 
     <section className="outcomes" id="capabilities">
