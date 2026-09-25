@@ -66,9 +66,9 @@ const technologies = [
 ];
 
 const projects = [
-  { no: "01", name: "VSFeed", type: "VS Code extension · Shipped", copy: "A context-aware social feed for idle moments in development, designed to reduce context switching and make returning to work easier.", href: "https://marketplace.visualstudio.com/items?itemName=PrathameshNikam.vsfeed", className: "project-vsfeed", proof: "Available on VS Marketplace" },
-  { no: "02", name: "CanIPlay", type: "Network intelligence · Open source", copy: "A network feasibility and latency analysis tool that helps players understand whether an online game will work well on their connection.", href: "https://github.com/Prathmesh333/CanIPlay", className: "project-caniplay", proof: "Explore the repository" },
-  { no: "03", name: "Distributed AI research", type: "Experimental engineering", copy: "Hands-on work across distributed machine learning, retrieval systems and AI infrastructure, translating research into working technical systems.", href: "https://github.com/Prathmesh333/ray", className: "project-research", proof: "View the research work" },
+  { no: "01", name: "Commerce platforms", type: "Web · Mobile · Operations", copy: "A complete online store with thoughtful product discovery, payments, inventory, analytics and the internal tools needed to run it.", className: "project-vsfeed", proof: "Explore this direction" },
+  { no: "02", name: "Healthcare operations", type: "Scheduling · Records · Insights", copy: "A secure workspace for appointments, patient information, team coordination and clear operational reporting.", className: "project-caniplay", proof: "Explore this direction" },
+  { no: "03", name: "Learning platforms", type: "Courses · Progress · Community", copy: "A modern learning experience with interactive content, progress tracking, assessments and reporting for learners and teams.", className: "project-research", proof: "Explore this direction" },
 ];
 
 function Mark({ theme }: { theme: "light" | "dark" }) {
@@ -115,7 +115,7 @@ export default function StudioExperience() {
     <header className="nav-shell">
       <a className="brand" href="#top" aria-label="AIRA home"><BrandLogo theme={theme} /></a>
       <nav className={menu ? "nav-links open" : "nav-links"} aria-label="Main navigation">
-        <a href="#services" onClick={() => setMenu(false)}>What we build</a><a href="#work" onClick={() => setMenu(false)}>Real work</a><a href="#capabilities" onClick={() => setMenu(false)}>Possibilities</a><a href="#process" onClick={() => setMenu(false)}>Process</a><a href="#about" onClick={() => setMenu(false)}>About</a>
+        <a href="#services" onClick={() => setMenu(false)}>What we build</a><a href="#work" onClick={() => setMenu(false)}>Product ideas</a><a href="#capabilities" onClick={() => setMenu(false)}>Possibilities</a><a href="#process" onClick={() => setMenu(false)}>Process</a><a href="#about" onClick={() => setMenu(false)}>About</a>
       </nav>
       <div className="nav-actions"><button className="theme-toggle" onClick={toggleTheme} aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>{theme === "light" ? <Moon weight="bold" /> : <Sun weight="bold" />}</button><a className="nav-cta" href="#contact">Tell us your idea <ArrowRight weight="bold" /></a></div>
       <button className="menu-button" onClick={() => setMenu(!menu)} aria-label="Toggle navigation">{menu ? <X /> : <List />}</button>
@@ -164,10 +164,10 @@ export default function StudioExperience() {
     </section>
 
     <section className="work" id="work">
-      <Reveal className="work-heading"><p className="kicker">What we have built</p><h2>Real work.<br /><em>Public proof.</em></h2><p>Shipped products, open-source tools and technical research you can inspect for yourself.</p></Reveal>
+      <Reveal className="work-heading"><p className="kicker">What we can build</p><h2>Useful software.<br /><em>Made around you.</em></h2><p>These are examples of the product directions AIRA can design and develop around your business, users and goals.</p></Reveal>
       <div className="project-stack">{projects.map((project, index) => <Reveal className={`project ${project.className}`} key={project.name}>
         <div className="project-signal" aria-hidden="true"><span /><span /><span /><span /></div>
-        <div className="project-copy"><span>{project.no}</span><h3>{project.name}</h3><strong>{project.type}</strong><p>{project.copy}</p><a href={project.href} target="_blank" rel="noreferrer" aria-label={`${project.proof}: ${project.name}`}><ArrowUpRight /></a><small>{project.proof}</small></div>
+        <div className="project-copy"><span>{project.no}</span><h3>{project.name}</h3><strong>{project.type}</strong><p>{project.copy}</p><a href="#contact" aria-label={`${project.proof}: ${project.name}`}><ArrowUpRight /></a><small>{project.proof}</small></div>
       </Reveal>)}</div>
     </section>
 
